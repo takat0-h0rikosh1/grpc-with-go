@@ -9,9 +9,12 @@ require (
 	github.com/google/gops v0.3.6 // indirect
 	github.com/keybase/go-ps v0.0.0-20190827175125-91aafc93ba19 // indirect
 	github.com/shirou/gopsutil v2.19.12+incompatible // indirect
-	github.com/thoas/go-funk v0.5.0 // indirect
+	github.com/thoas/go-funk v0.5.0
 	github.com/xlab/treeprint v0.0.0-20181112141820-a009c3971eca // indirect
+	golang.org/x/lint v0.0.0-20190313153728-d0100b6bd8b3 // indirect
 	golang.org/x/sys v0.0.0-20200107162124-548cf772de50 // indirect
+	golang.org/x/tools v0.0.0-20190524140312-2c0ae7006135 // indirect
 	google.golang.org/grpc v1.26.0
+	honnef.co/go/tools v0.0.0-20190523083050-ea95bdfd59fc // indirect
 	rsc.io/goversion v1.2.0 // indirect
 )
