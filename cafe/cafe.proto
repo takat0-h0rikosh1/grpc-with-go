@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package cafe;
+
+import "google/protobuf/empty.proto";
+
+service Cafe {
+  rpc GetMenus (google.protobuf.Empty) returns (GetMenusReply) {}
+  rpc Order (OrderRequest) returns (OrderReply) {}
+}
+
+message GetMenusReply {
+    repeated Menu menus = 1;
+}
+
+message Menu {
+    string name = 1;
+    int32 price = 2;
+}
+
+message OrderRequest {
+    string name = 1;
+}
+
+message OrderReply {
+  int32 price = 1;
+}
