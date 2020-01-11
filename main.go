@@ -10,10 +10,7 @@ import (
 	pb "grpc-with-go/cafe"
 	"log"
 	"net"
-)
-
-const (
-	port = ":50052"
+	"os"
 )
 
 type server struct {
@@ -68,7 +65,11 @@ func (s *server) GetMenus(ctx context.Context, in *empty.Empty) (*pb.GetMenusRep
 	return &pb.GetMenusReply{Menus: menus}, nil
 }
 func main() {
-	lis, err := net.Listen("tcp", port)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	lis, err := net.Listen("tcp", ":" + port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
