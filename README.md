@@ -5,7 +5,7 @@
 ```sh
 $ go run main.go
 
-$ grpcurl -plaintext localhost:50052 cafe.Cafe/GetMenus
+$ grpcurl -plaintext localhost:8080 cafe.Cafe/GetMenus
 {
   "menus": [
     {
@@ -23,7 +23,7 @@ $ grpcurl -plaintext localhost:50052 cafe.Cafe/GetMenus
   ]
 }
 
-$ grpcurl -plaintext -d '{"name":"coffee"}'  localhost:50052 cafe.Cafe/Order
+$ grpcurl -plaintext -d '{"name":"coffee"}' localhost:8080 cafe.Cafe/Order
 {
   "price": 100
 }
@@ -35,5 +35,5 @@ $ grpcurl -plaintext -d '{"name":"coffee"}'  localhost:50052 cafe.Cafe/Order
 ```sh
 $ docker build -t cafe .
 
-$ docker run -it --rm -p 50052:50052 cafe
+$ docker run -it --rm -e PORT=50052 -p 8080:50052 cafe
 ```
